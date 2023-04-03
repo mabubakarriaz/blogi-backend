@@ -43,6 +43,8 @@ Please perform the following assignment project on Azure by using ACloud Guru Sa
 - To speed up pull these images
   - docker pull mcr.microsoft.com/dotnet/aspnet:7.0
   - docker pull mcr.microsoft.com/dotnet/sdk:7.0
+- Setup sql connectivity  go to: https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools?tabs=ubuntu-install%2Credhat-offline&view=sql-server-ver16#ubuntu
+- connection string from vm: sqlcmd -S tcp:blogisqlserver003223.database.windows.net,1433 -d AdventureWorksLT -U azureuser -P Mobilink@@123456
 
 ## Database
 
