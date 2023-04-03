@@ -31,6 +31,6 @@ stages:
       inputs:
         containerRegistry: 'docker-registry'
         repository: 'abubakarriaz/blogi-backend'
-        command: build
+        command: buildAndPush
         dockerfile: '$(Build.SourcesDirectory)/src/Dockerfile'
         tags: $(tag)
