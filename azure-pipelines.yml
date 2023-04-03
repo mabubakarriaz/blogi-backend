@@ -30,7 +30,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'docker-registry'
-        repository: 'abubakarriaz/blogi-backend:$(tag)'
+        repository: 'abubakarriaz/blogi-backend'
         command: build
         dockerfile: '$(Build.SourcesDirectory)/src/Dockerfile'
         tags: $(tag)
