@@ -24,9 +24,12 @@ stages:
     - task: DockerInstaller@0
       inputs:
         dockerVersion: '17.09.0-ce'
+
     - task: Docker@2
       displayName: Build an image
       inputs:
+        containerRegistry: 'docker-registry'
+        repository: 'abubakarriaz/blogi-backend:$(tag)'
         command: build
         dockerfile: '$(Build.SourcesDirectory)/src/Dockerfile'
         tags: $(tag)
