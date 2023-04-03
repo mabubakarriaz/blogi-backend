@@ -35,13 +35,17 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/src/Dockerfile'
         tags: $(tag)
     
-    - task: AzureRmWebAppDeployment@4
+    #- task: AzureRmWebAppDeployment@4
+    #  inputs:
+    #    ConnectionType: 'AzureRM'
+    #    azureSubscription: 'rm-managed-id'
+    #    appType: 'webAppContainer'
+    #    WebAppName: 'blogibackend22448822'
+    #    DockerNamespace: 'docker.io'
+    #    DockerRepository: 'abubakarriaz/blogi-backend'
+    #    DockerImageTag: 'latest'    
+    - task: AzureWebAppContainer@1
       inputs:
-        ConnectionType: 'AzureRM'
         azureSubscription: 'rm-managed-id'
-        appType: 'webAppContainer'
-        WebAppName: 'blogibackend22448822'
-        DockerNamespace: 'docker.io'
-        DockerRepository: 'abubakarriaz/blogi-backend'
-        DockerImageTag: 'latest'
-    
+        appName: 'blogibackend22448822'
+        containers: 'docker.io/abubakarriaz/blogi-backend:latest'
