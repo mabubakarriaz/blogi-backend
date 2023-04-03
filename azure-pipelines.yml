@@ -15,16 +15,12 @@ stages:
 - stage: Build
   displayName: Dockerize App
   jobs:
-  - job: Job-1
+  - job: Job1
     displayName: Docker Build and push
     pool:
       name: Default
       # vmImage: ubuntu-latest
     steps:
-
-    - task: DockerInstaller@0
-      inputs:
-        dockerVersion: '17.09.0-ce'
 
     - task: Docker@2
       displayName: Build an image
@@ -38,7 +34,7 @@ stages:
 - stage: deploy
   displayName: Deploy to VM
   jobs:
-  - job: Job-1
+  - job: Job1
     displayName: SSH and docker container up
     pool:
       name: Default
