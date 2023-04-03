@@ -15,7 +15,7 @@ stages:
 - stage: Build
   displayName: Dockerize App
   jobs:
-  - job: Build
+  - job: Job-1
     displayName: Docker Build and push
     pool:
       name: Default
@@ -34,6 +34,15 @@ stages:
         command: buildAndPush
         dockerfile: '$(Build.SourcesDirectory)/src/Dockerfile'
         tags: $(tag)
+
+- stage: deploy
+  displayName: Deploy to VM
+  jobs:
+  - job: Job-1
+    displayName: SSH and docker container up
+    pool:
+      name: Default
+    steps:
 
     - task: SSH@0
       inputs:
