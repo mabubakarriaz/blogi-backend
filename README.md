@@ -34,7 +34,7 @@ Please perform the following assignment project on Azure by using ACloud Guru Sa
 - sudo service docker restart
 - run the interactive agent runner ./run.sh
 
-## Backend VM Setup
+## Web VM Setup
 
 - Install docker as instructions from https://docs.docker.com/engine/install/ubuntu/
 - Install docker as instructions from https://docs.docker.com/engine/install/ubuntu/
@@ -43,6 +43,14 @@ Please perform the following assignment project on Azure by using ACloud Guru Sa
 - To speed up pull these images
   - docker pull mcr.microsoft.com/dotnet/aspnet:7.0
   - docker pull mcr.microsoft.com/dotnet/sdk:7.0
+
+## Database
+
+- create sql server instance
+- create sql database
+- Create vnet service end point with microsoft.sql
+- create private end point for sql
+- create private DNS entry
 
 ### important commands
 
