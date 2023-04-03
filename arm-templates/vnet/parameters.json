@@ -1,0 +1,140 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "extendedLocation": {
+            "value": {}
+        },
+        "virtualNetworkName": {
+            "value": "virtual-network-01"
+        },
+        "tagsByResource": {
+            "value": {
+                "Microsoft.Network/virtualNetworks": {
+                    "created-by": "abubakar.riaz"
+                },
+                "Microsoft.Network/ddosProtectionPlans": {
+                    "created-by": "abubakar.riaz"
+                },
+                "Microsoft.Network/publicIPAddresses": {
+                    "created-by": "abubakar.riaz"
+                },
+                "Microsoft.Network/azureFirewalls": {
+                    "created-by": "abubakar.riaz"
+                },
+                "Microsoft.Network/bastionHosts": {
+                    "created-by": "abubakar.riaz"
+                },
+                "Microsoft.Network/natGateways": {
+                    "created-by": "abubakar.riaz"
+                },
+                "Microsoft.Network/publicIPPrefixes": {
+                    "created-by": "abubakar.riaz"
+                },
+                "Microsoft.Network/networkSecurityGroups": {
+                    "created-by": "abubakar.riaz"
+                }
+            }
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.0.0.0/16"
+            ]
+        },
+        "natGatewaysWithNewPublicIpAddress": {
+            "value": []
+        },
+        "natGatewaysWithoutNewPublicIpAddress": {
+            "value": []
+        },
+        "natGatewayPublicIpAddressesNewNames": {
+            "value": []
+        },
+        "networkSecurityGroupsNew": {
+            "value": []
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "web-subnet",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/24",
+                        "networkSecurityGroup": {
+                            "id": "/subscriptions/0cfe2870-d256-4119-b0a3-16293ac11bdc/resourceGroups/1-e4825d7d-playground-sandbox/providers/Microsoft.Network/networkSecurityGroups/network-security-group-01"
+                        }
+                    }
+                },
+                {
+                    "name": "db-subnet",
+                    "properties": {
+                        "addressPrefix": "10.0.1.0/24",
+                        "networkSecurityGroup": {
+                            "id": "/subscriptions/0cfe2870-d256-4119-b0a3-16293ac11bdc/resourceGroups/1-e4825d7d-playground-sandbox/providers/Microsoft.Network/networkSecurityGroups/network-security-group-01"
+                        }
+                    }
+                }
+            ]
+        },
+        "ddosProtectionPlanEnabled": {
+            "value": false
+        },
+        "firewallEnabled": {
+            "value": false
+        },
+        "firewallPolicyIsNew": {},
+        "firewallPolicyId": {},
+        "firewallPublicIpAddressIsNew": {
+            "value": true
+        },
+        "firewallPublicIpAddressName": {
+            "value": "virtual-network-01-firewall-publicIpAddress1"
+        },
+        "bastionEnabled": {
+            "value": false
+        },
+        "bastionPublicIpAddressIsNew": {
+            "value": true
+        },
+        "bastionPublicIpAddressName": {
+            "value": "virtual-network-01-bastion-publicIpAddress1"
+        },
+        "bastionNsgIsNew": {},
+        "bastionNsgId": {},
+        "addressSpaceStartingAddressChanged": {
+            "value": false
+        },
+        "addressSpaceAddressSizeChanged": {
+            "value": false
+        },
+        "ipv6Enabled": {
+            "value": false
+        },
+        "defaultSubnetChanged": {
+            "value": true
+        },
+        "subnetsInfo": {
+            "value": [
+                {
+                    "cidr": "10.0.0.0/24",
+                    "name": "Default",
+                    "natGw": "none",
+                    "nsg": "existing",
+                    "udr": "none"
+                },
+                {
+                    "cidr": "10.0.1.0/24",
+                    "name": "Default",
+                    "natGw": "none",
+                    "nsg": "existing",
+                    "udr": "none"
+                }
+            ]
+        },
+        "subnetCount": {
+            "value": 2
+        }
+    }
+}

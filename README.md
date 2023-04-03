@@ -15,9 +15,37 @@ Please perform the following assignment project on Azure by using ACloud Guru Sa
 
 # Instructions
 
-- git clone https://github.com/mabubakarriaz/blogi-backend.git
+## Service Connections
 
-- docker pull mcr.microsoft.com/dotnet/aspnet:7.0
-- docker pull mcr.microsoft.com/dotnet/sdk:7.0
+- Github
+  - mabubakarriaz
+- Docker Hub
+  - docker-registry
+- SSH a VM
+  - ssh-vm
+
+## Build Agent Setup
+
+- Create a VM build agent
+- Create Personal Access Token (PAT) from Azure DevOps
+- Go to download instructions on Create new default agent for linux
+- Install docker as instructions from https://docs.docker.com/engine/install/ubuntu/
+- Give rights sudo usermod -aG docker $(whoami)
+- sudo service docker restart
+- run the interactive agent runner ./run.sh
+
+## Backend VM Setup
+
+- Install docker as instructions from https://docs.docker.com/engine/install/ubuntu/
+- Install docker as instructions from https://docs.docker.com/engine/install/ubuntu/
+- Give rights sudo usermod -aG docker $(whoami)
+- sudo service docker restart
+- To speed up pull these images
+  - docker pull mcr.microsoft.com/dotnet/aspnet:7.0
+  - docker pull mcr.microsoft.com/dotnet/sdk:7.0
+
+### important commands
+
 - docker build -t abubakarriaz/blogi-backend:latest .
 - docker run -d -p 8100:80 --name blogi-backend-server-01 abubakarriaz/blogi-backend:latest
+- git clone https://github.com/mabubakarriaz/blogi-backend.git

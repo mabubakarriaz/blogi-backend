@@ -33,6 +33,8 @@ stages:
 
 - stage: deploy
   displayName: Deploy to VM
+  dependsOn: Build
+  condition: 
   jobs:
   - job: Job1
     displayName: SSH and docker container up
@@ -42,7 +44,7 @@ stages:
 
     - task: SSH@0
       inputs:
-        sshEndpoint: 'ssh-vm'
+        sshEndpoint: 'service-connection-ssh-vm'
         runOptions: 'commands'
         commands: 'docker run -d -p 8100:80 --name blogi-backend-server-01 abubakarriaz/blogi-backend:latest'
         readyTimeout: '20000'
